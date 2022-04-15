@@ -5,19 +5,23 @@ import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from "./components/LoginButton";
 import LogoutButton from "./components/LogoutButton";
 import LanguageContext from "./context/LanguageContext";
-import { Grid, MenuItem, Select } from "@mui/material";
-import { Box } from "@mui/system";
+import { Button, Grid, MenuItem, Select } from "@mui/material";
 import { useClock } from "./hooks/useClook";
+import { ContactUs } from "./sections/header/ContactUs";
+import { useModal } from "./hooks/useModal";
+import ModalElement from "./components/Modal";
 
 function App() {
     const { isAuthenticated } = useAuth0();
     const { texts, handleLanguage, language } = useContext(LanguageContext);
     const time = useClock();
+    const {isOpen:isOpenModal1, openModal:openModal1, closeModal:closeModal1} = useModal(false);
+
+
 
     return (
         <div className="App">
             <header className="App-header">
-                {/* <Box sx={{ flexGrow: 1 }} alignItems="center"> */}
                 <Grid
                     container
                     spacing={2}
@@ -39,6 +43,12 @@ function App() {
                     >
                         <Grid item>
                             <p style={{ margin: 0 }}>{time}</p>
+                        </Grid>
+                        <Grid item>
+                            <Button variant="outlined" sx={{m: 1}} onClick={openModal1}>{texts.contactButton}</Button>
+                            <ModalElement isOpen={isOpenModal1} closeModal={closeModal1}>
+                                <ContactUs closeModal={closeModal1} isOpen={isOpenModal1}/>
+                            </ModalElement>
                         </Grid>
                         <Grid item>
                             {!isAuthenticated && <LoginButton />}
@@ -66,7 +76,6 @@ function App() {
                         </Grid>
                     </Grid>
                 </Grid>
-                {/* </Box> */}
             </header>
             <main className="App-main">
                 <img src={logo} className="App-logo" alt="logo" />

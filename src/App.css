@@ -20,14 +20,14 @@
     }
 }
 
-h2 {
+.App-header h2 {
     padding-left: 1rem;
     margin: 0;
 }
 
 .App-header {
     background-color: #d7d7d8;
-    min-height: 12vh;
+    min-height: 10vh;
     /* display: flex; */
     /* flex-direction: row; */
     /* align-items: center; */
@@ -37,11 +37,15 @@ h2 {
     /* align-items: center;
     text-align: center; */
 }
+.App-header h2 {
+    padding-left: 1rem;
+    margin: 0;
+}
 
 .App-main {
     text-align: center;
     background-color: #808388;
-    min-height: 88vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
