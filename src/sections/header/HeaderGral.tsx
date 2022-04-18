@@ -1,5 +1,12 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { Button, Grid, MenuItem, Select } from "@mui/material";
+import {
+    Button,
+    FormControl,
+    Grid,
+    InputLabel,
+    MenuItem,
+    Select,
+} from "@mui/material";
 import { useContext } from "react";
 import LoginButton from "../../components/LoginButton";
 import LogoutButton from "../../components/LogoutButton";
@@ -70,20 +77,25 @@ export const HeaderGral = () => {
                         )}
                     </Grid>
                     <Grid item>
-                        <Select
-                            labelId="Status"
-                            id="status"
-                            name="status"
-                            value={language}
-                            label="Status"
-                            onChange={handleLanguage}
-                            defaultValue="es"
-                            size="small"
-                            sx={{ mr: 2 }}
-                        >
-                            <MenuItem value="es">Español</MenuItem>
-                            <MenuItem value="en">English</MenuItem>
-                        </Select>
+                        <FormControl>
+                            <InputLabel id="languageSelect">
+                                {texts.selectLanguage}
+                            </InputLabel>
+                            <Select
+                                labelId="languageSelect"
+                                id="language"
+                                name="language"
+                                value={language}
+                                label={texts.selectLanguage}
+                                onChange={handleLanguage}
+                                defaultValue="es"
+                                size="small"
+                                sx={{ mr: 2 }}
+                            >
+                                <MenuItem value="es">Español</MenuItem>
+                                <MenuItem value="en">English</MenuItem>
+                            </Select>
+                        </FormControl>
                     </Grid>
                 </Grid>
             </Grid>

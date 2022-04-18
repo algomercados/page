@@ -43,11 +43,10 @@
 }
 
 .App-main {
-    background-color: #808388;
+    background-color: #aeafb3;
     min-height: 90vh;
     display: flex;
     flex-direction: column;
-
     font-size: calc(10px + 2vmin);
     color: white;
 }
@@ -64,4 +63,10 @@
 }
 
 .App-footer {
+}
+
+hr {
+    border: 1px solid black;
+    width: 99vw;
+    margin: 0%;
 }

@@ -6,15 +6,27 @@ const initialLanguage = "es";
 const translations = {
     es: {
         auxText: "En Construcción",
+        contactButton: "Contactanos",
         logIn: "ACCEDER",
         logOut: "SALIR",
-        contactButton:"Contactanos",
+        selectLanguage: "Language",
+        toSearch: "Buscar",
+        toMain: "inicio",
+        selectCompany: "Empresa",
+        selectNumbOne: "Opción Uno",
+        selectNumbTwo: "Opción Dos",
     },
     en: {
         auxText: "Under Construction",
+        contactButton: "Contact us",
         logIn: "LOGIN",
         logOut: "LOGOUT",
-        contactButton:"Contact us",
+        selectLanguage: "Idioma",
+        toSearch: "Search",
+        toMain: "Main",
+        selectCompany: "Company",
+        selectNumbOne: "Option One",
+        selectNumbTwo: "Option Two",
     },
 };
 
